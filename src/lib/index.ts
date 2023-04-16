@@ -20,7 +20,12 @@ export function init(app: KasifApp) {
         render(parent: HTMLElement) {
           createApp(App).mount(parent);
 
-          return () => {}
+          const instance = document.querySelector("#vue-plugin");
+          return () => {
+            if (instance) {
+              parent.removeChild(instance);
+            }
+          };
         }
       }
     }
