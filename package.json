@@ -6,28 +6,29 @@
   "description": "Kasif plugin template with Vue",
   "scripts": {
     "dev": "vite",
-    "build": "node build",
+    "build": "node ./.kasif/build.js",
     "preview": "vite preview"
   },
   "dependencies": {
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@kasif-apps/app": "^0.0.0",
+    "@kasif-apps/plugin-compiler": "^0.0.1",
+    "@types/node": "^18.15.11",
     "@vitejs/plugin-vue": "^4.1.0",
+    "tslib": "^2.5.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
-    "vue-tsc": "^1.2.0",
-    "@types/node": "^18.15.11",
-    "@kasif-apps/app": "^0.0.0",
-    "tslib": "^2.5.0",
-    "vite-plugin-dts": "^2.1.0",
-    "zip-a-folder": "^1.1.5",
-    "fs-extra": "^11.1.1"
+    "vue-tsc": "^1.2.0"
   },
   "kasif": {
     "name": "Vue Plugin Template",
     "identifier": "vue-plugin-template",
-    "entry": "entry",
+    "lib": {
+      "dir": "lib",
+      "entry": "index"
+    },
     "backend": {
       "dir": "remote",
       "entry": "index"

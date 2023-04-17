@@ -1,9 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import type { App as KasifApp } from "@kasif-apps/app";
+import { greet } from '../remote/index';
 
-export function init(app: KasifApp) {
-  app.notificationManager.success("Hello from vue plugin", "Hello");
+export async function init(app: KasifApp) {
+  const message = await greet("from vue plugin")
+  app.notificationManager.success(message, "Hello");
 
   app.viewManager.pushView({
     view: {
